@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="purple_heart">#793FDF</color>
+    <color name="cornflower_blue">#7091F5</color>
+    <color name="anakiwa">#97FFF4</color>
+    <color name="dolly">#FFFD8C</color>
+</resources>
