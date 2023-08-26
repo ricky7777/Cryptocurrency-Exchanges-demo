@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.nogle.cex"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.nogle.cex"
@@ -35,6 +35,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -44,10 +45,13 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
 
 dependencies {
 
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.1")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.1")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.activity:activity-compose:1.7.2")

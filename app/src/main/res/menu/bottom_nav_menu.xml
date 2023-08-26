@@ -1,14 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_a"
+        android:id="@+id/firstFragment"
         android:title="@string/tab_index_1" />
     <item
-        android:id="@+id/action_b"
+        android:id="@+id/secondFragment"
         android:title="@string/tab_index_2" />
     <item
-        android:id="@+id/action_c"
+        android:id="@+id/thirdFragment"
         android:title="@string/tab_index_3" />
     <item
-        android:id="@+id/action_d"
+        android:id="@+id/fourthFragment"
         android:title="@string/tab_index_4" />
 </menu>

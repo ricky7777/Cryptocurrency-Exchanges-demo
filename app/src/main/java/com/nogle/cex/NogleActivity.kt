@@ -1,15 +1,14 @@
 package com.nogle.cex
 
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.nogle.cex.databinding.BottomNavItemBinding
+import com.nogle.cex.databinding.NogleActivityBinding
 
 
 /**
@@ -17,33 +16,65 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
  * Nogle crypto currency exchange entry point
  */
 class NogleActivity : AppCompatActivity() {
-    private var baselineHeight = 0
+    private lateinit var binding: NogleActivityBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.nogle_activity)
-        customizeBottomNavigationView(findViewById(R.id.bottom_navigation))
+        binding = NogleActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setView()
+//        setEvent()
     }
 
-    private fun customizeBottomNavigationView(bottomNavigationView: BottomNavigationView) {
+    private fun setView() {
+        customizeBottomNavigationView()
+        val navController = findNavController(R.id.nav_host_fragment)
+//        navController.navigate()
+        binding.bottomNavigation.setupWithNavController(navController)
+    }
+
+    private fun customizeBottomNavigationView() {
+        val bottomNavigationView = binding.bottomNavigation
         val menuView = bottomNavigationView.getChildAt(0) as BottomNavigationMenuView
 
         for (i in 0 until menuView.childCount) {
             val item = menuView.getChildAt(i) as BottomNavigationItemView
             // use customer view
-            val customView = LayoutInflater.from(item.context).inflate(R.layout.bottom_nav_item, item, false)
-            val textView = customView.findViewById<TextView>(R.id.menuItemText)
+            val customView = BottomNavItemBinding.inflate(layoutInflater)
+            val textView = customView.menuItemText
             textView.text = bottomNavigationView.menu.getItem(i).title
 
             // add view
             item.removeAllViews()
-            item.addView(customView)
+            item.addView(customView.root)
         }
     }
 
+    private fun setEvent() {
+        binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.firstFragment -> {
+                    Log.i("", "")
+                    return@setOnItemSelectedListener true
+                }
 
+                R.id.secondFragment -> {
+                    Log.i("", "")
+                    return@setOnItemSelectedListener true
+                }
 
-    fun pxToDp(px: Float): Float {
-        val density = resources.displayMetrics.density
-        return px / density
+                R.id.thirdFragment -> {
+                    Log.i("", "")
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.fourthFragment -> {
+                    Log.i("", "")
+                    return@setOnItemSelectedListener true
+                }
+
+                else -> false
+            }
+        }
     }
 }

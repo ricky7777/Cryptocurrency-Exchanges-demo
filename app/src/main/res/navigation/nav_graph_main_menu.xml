@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_main_menu"
+    app:startDestination="@id/firstFragment">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.nogle.cex.fragment.FirstFragment"
+        android:label="FirstFragment" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.nogle.cex.fragment.SecondFragment"
+        android:label="SecondFragment" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.nogle.cex.fragment.ThirdFragment"
+        android:label="ThirdFragment" />
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.nogle.cex.fragment.FourthFragment"
+        android:label="FourthFragment" />
+</navigation>
