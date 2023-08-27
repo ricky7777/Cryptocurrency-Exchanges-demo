@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_exchange"
+    app:startDestination="@id/spotFragment">
+    <fragment
+        android:id="@+id/spotFragment"
+        android:name="com.nogle.cex.fragment.level2.SpotFragment" />
+
+    <fragment
+        android:id="@+id/futuresFragment"
+        android:name="com.nogle.cex.fragment.level2.FuturesFragment" />
+</navigation>
