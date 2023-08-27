@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
+import com.nogle.cex.CustomNavigator
 import com.nogle.cex.R
 import com.nogle.cex.databinding.FragmentExchangeBinding
 
@@ -36,6 +37,12 @@ class FirstFragment : Fragment() {
     private fun setNavigation() {
         val navHostFragment = childFragmentManager.findFragmentById(R.id.tab_container) as NavHostFragment
         navController = navHostFragment.findNavController()
+//        context?.let {
+//            val navigator = CustomNavigator(it, navHostFragment.childFragmentManager, R.id.tab_container)
+//            navController.navigatorProvider.addNavigator(navigator)
+//            navController.setGraph(R.navigation.nav_graph_exchange)
+//        }
+
         navController.navigate(R.id.spotFragment)
     }
 

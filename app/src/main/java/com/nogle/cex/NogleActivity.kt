@@ -2,6 +2,7 @@ package com.nogle.cex
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -9,7 +10,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.nogle.cex.databinding.BottomNavItemBinding
 import com.nogle.cex.databinding.NogleActivityBinding
-
 
 /**
  * @author Ricky Chen
@@ -23,13 +23,11 @@ class NogleActivity : AppCompatActivity() {
         binding = NogleActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setView()
-//        setEvent()
     }
 
     private fun setView() {
         customizeBottomNavigationView()
         val navController = findNavController(R.id.nav_host_fragment)
-//        navController.navigate()
         binding.bottomNavigation.setupWithNavController(navController)
     }
 
@@ -50,31 +48,4 @@ class NogleActivity : AppCompatActivity() {
         }
     }
 
-    private fun setEvent() {
-        binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.firstFragment -> {
-                    Log.i("", "")
-                    return@setOnItemSelectedListener true
-                }
-
-                R.id.secondFragment -> {
-                    Log.i("", "")
-                    return@setOnItemSelectedListener true
-                }
-
-                R.id.thirdFragment -> {
-                    Log.i("", "")
-                    return@setOnItemSelectedListener true
-                }
-
-                R.id.fourthFragment -> {
-                    Log.i("", "")
-                    return@setOnItemSelectedListener true
-                }
-
-                else -> false
-            }
-        }
-    }
 }
