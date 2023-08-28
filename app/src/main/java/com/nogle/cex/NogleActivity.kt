@@ -1,8 +1,7 @@
 package com.nogle.cex
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -15,7 +14,7 @@ import com.nogle.cex.databinding.NogleActivityBinding
  * @author Ricky Chen
  * Nogle crypto currency exchange entry point
  */
-class NogleActivity : AppCompatActivity() {
+class NogleActivity : AppCompatActivity(), NogleHandler {
     private lateinit var binding: NogleActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +45,14 @@ class NogleActivity : AppCompatActivity() {
             item.removeAllViews()
             item.addView(customView.root)
         }
+    }
+
+    override fun showBottomMenu() {
+        binding.bottomNavigation.visibility = View.VISIBLE
+    }
+
+    override fun hideBottomMenu() {
+        binding.bottomNavigation.visibility = View.GONE
     }
 
 }

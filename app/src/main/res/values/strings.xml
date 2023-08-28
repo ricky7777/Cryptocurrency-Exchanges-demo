@@ -4,6 +4,8 @@
     <string name="tab_index_2">B</string>
     <string name="tab_index_3">C</string>
     <string name="tab_index_4">D</string>
+    <string name="text_fragment_setting_desc">Settings</string>
+    <string name="text_back">Back</string>
 
     <string name="tab_level_2_spot">Spot</string>
     <string name="tab_level_2_futures">Futures</string>

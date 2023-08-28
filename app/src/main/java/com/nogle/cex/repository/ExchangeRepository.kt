@@ -8,8 +8,6 @@ import com.nogle.cex.data.ExchangeItem
 import com.nogle.cex.network.BTSEApiClient
 import com.nogle.cex.network.WebSocketClient
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import java.math.BigDecimal
@@ -18,7 +16,7 @@ import java.math.RoundingMode
 /**
  * Created by Ricky on 2023/8/27.
  * two data source
- * Btse http url get all of coin symbol(exchangeItemList)
+ * Btse http api url get all of coin symbol(exchangeItemList)
  * Btse web socket url get price
  * and filter type = 1 and special symbol from(exchangeItemList)
  * finally update date via live data
@@ -38,11 +36,9 @@ class ExchangeRepository : IRepository {
         private const val WSS_KEY_PRICE = "price"
     }
 
-    override fun initializeData(scope: CoroutineScope) {
-        scope.launch(Dispatchers.IO) {
-            WebSocketClient().connect(WSS_URL_BTSE_URL, btseWssListener).send(WSS_MESSAGE)
-            processSymbolData()
-        }
+    override suspend fun initializeData(scope: CoroutineScope) {
+        WebSocketClient().connect(WSS_URL_BTSE_URL, btseWssListener).send(WSS_MESSAGE)
+        processSymbolData()
     }
 
     private suspend fun processSymbolData() {
@@ -56,12 +52,15 @@ class ExchangeRepository : IRepository {
     }
 
     private val btseWssListener = object : WebSocketListener() {
-        override fun onMessage(webSocket: WebSocket, data: String) {
-            val dataObject = JsonParser.parseString(data).asJsonObject
+        override fun onMessage(webSocket: WebSocket, text: String) {
+            val dataObject = JsonParser.parseString(text).asJsonObject
             priceUpdate(dataObject)
         }
     }
 
+    /**
+     * get wss data, and mapping symbol to update price
+     */
     private fun priceUpdate(dataObject: JsonObject) {
         dataObject.get(WSS_KEY_DATA)?.let { priceDataObj ->
             val priceObjList: List<JsonObject> = priceDataObj.asJsonObject.entrySet().map { it.value.asJsonObject }
@@ -90,6 +89,6 @@ class ExchangeRepository : IRepository {
 }
 
 interface IRepository {
-    fun initializeData(scope: CoroutineScope)
+    suspend fun initializeData(scope: CoroutineScope)
 
 }

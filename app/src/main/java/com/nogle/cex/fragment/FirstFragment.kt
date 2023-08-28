@@ -9,15 +9,16 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
-import com.nogle.cex.CustomNavigator
 import com.nogle.cex.R
 import com.nogle.cex.databinding.FragmentExchangeBinding
 
 /**
  * Created by Ricky on 2023/8/27.
+ * this is currency display fragment
+ * and have two sub fragment
  */
 class FirstFragment : Fragment() {
-    private var binding: FragmentExchangeBinding? = null
+    private lateinit var binding: FragmentExchangeBinding
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -25,7 +26,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentExchangeBinding.inflate(inflater, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,11 +48,11 @@ class FirstFragment : Fragment() {
     }
 
     private fun setEvent() {
-        binding?.tabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when (tab?.position) {
-                    0 -> navController.navigate(R.id.spotFragment)
-                    1 -> navController.navigate(R.id.futuresFragment)
+                    Tabs.TAB_SPOT.ordinal -> navController.navigate(R.id.spotFragment)
+                    Tabs.TAB_FUTURES.ordinal -> navController.navigate(R.id.futuresFragment)
                 }
             }
 
@@ -60,9 +61,8 @@ class FirstFragment : Fragment() {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
     }
+}
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
+enum class Tabs {
+    TAB_SPOT, TAB_FUTURES
 }

@@ -2,6 +2,7 @@ package com.nogle.cex.data
 
 /**
  * Created by Ricky on 2023/8/27.
+ * this data is for btse http api response use
  */
 data class BTSEResponse(
     val code: Int,

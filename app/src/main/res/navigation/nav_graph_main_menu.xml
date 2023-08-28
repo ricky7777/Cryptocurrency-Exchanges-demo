@@ -19,4 +19,12 @@
         android:id="@+id/fourthFragment"
         android:name="com.nogle.cex.fragment.FourthFragment"
         android:label="FourthFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.nogle.cex.fragment.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
 </navigation>

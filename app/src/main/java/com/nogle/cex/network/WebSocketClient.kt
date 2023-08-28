@@ -7,6 +7,8 @@ import okhttp3.WebSocketListener
 
 /**
  * Created by Ricky on 2023/8/27.
+ * Btse socket path wss://ws.btse.com/ws/futures
+ * Btse socket references https://btsecom.github.io/docs/futures/en/#subscription
  */
 class WebSocketClient {
 

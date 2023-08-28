@@ -8,7 +8,9 @@ import com.nogle.cex.databinding.CurrencyItemBinding
 
 /**
  * Created by Ricky on 2023/8/28.
- * Currency adapter, SpotFragment and FutureFragment will to share
+ * Currency adapter, adapter currency symbol and price
+ * this adapter use DiffUtil to optimize data process performance
+ * SpotFragment and FutureFragment will to share
  */
 class CurrencyAdapter(private var currencyData: Map<String, Float>) : RecyclerView.Adapter<CurrencyAdapter.ViewHolder>() {
     fun updateData(newData: Map<String, Float>) {

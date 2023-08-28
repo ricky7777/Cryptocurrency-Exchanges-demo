@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * Created by Ricky on 2023/8/27.
+ * Btse http api references https://api.btse.com/futures/api/inquire/initial/market
  */
 object BTSEApiClient {
     private const val BASE_URL = "https://api.btse.com/"

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 /**
  * Created by Ricky on 2023/8/27.
- * BTSE的API Interface
+ * BTSE API Interface
  */
 interface BTSEApi {
     @GET("futures/api/inquire/initial/market")

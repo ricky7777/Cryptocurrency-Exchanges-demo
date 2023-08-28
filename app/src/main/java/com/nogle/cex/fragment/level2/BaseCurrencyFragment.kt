@@ -13,6 +13,8 @@ import com.nogle.cex.databinding.FragmentBaseCurrencyBinding
 
 /**
  * Created by Ricky on 2023/8/28.
+ * Base Currency Fragment
+ * extract common function from FuturesFragment and SpotFragment
  */
 abstract class BaseCurrencyFragment : Fragment() {
     private val nogleViewModel: NogleViewModel by viewModels()
