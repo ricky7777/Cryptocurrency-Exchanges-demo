@@ -82,3 +82,6 @@ Data source<br/>
 ○ Use parameter price to display price<br/>
 <br/>
 https://www.immigration.gov.tw/media/62712/appendix-1.pdf<br/>
+
+<h1>TBD Enhancment</h1><br/>
+If turn off network, app will crash, root cause is call api through network not judge network is connect/disconnect. 
