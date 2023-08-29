@@ -1,17 +1,18 @@
-# nogle_exam
+# Nogle Cryptocurrency Exchanges Exam
 ![exchange_flow_app drawio](https://github.com/ricky7777/nogle_exam/assets/3930480/e1580a6f-4f08-4b91-b80d-7c93234b9c54)
-<h1>Use Skill</h1><br/>
+<h1>Use Skill</h1>
 1.MVVM<br/>
 2.ViewBinding<br/>
-3.DataBinding<br/>
-4.Coroutine<br/>
-5.Livedata<br/>
-6.Roomdatabase<br/>
-7.Repository pattern<br/>
-8.Junit test
+3.Coroutine<br/>
+4.Livedata<br/>
+5.Repository pattern<br/>
+6.Navigation Component<br/>
+7.Junit test
 <br/><br/>
 
+![exchange_flow_app drawio](https://github.com/ricky7777/nogle_exam/assets/3930480/e1580a6f-4f08-4b91-b80d-7c93234b9c54)
 Cryptocurrency Exchanges<br/>
+Requirement<br/>
 Please build up App according to the following description<br/>
 ● Android MVVM architecture (ViewModel/Repository)<br/>
 ● Use Retrofit + Coroutine to archive HTTP connection<br/>
@@ -19,6 +20,11 @@ Please build up App according to the following description<br/>
 ● Use MediatorLiveData to combine multiple data sources<br/>
 ● Use Kotlin language only<br/>
 ● Upload source code to Github/GitLab and share signed APK<br/>
+
+<br/><br/>
+
+
+
 
 Please design UI according to the following description<br/>
 - As a user, I want a Single-Activity App with BottomNavigationView that has 4 tabs A, B, C and D<br/>
@@ -36,6 +42,7 @@ Data source<br/>
 ● API path - https://api.btse.com/futures/api/inquire/initial/market<br/>
 ○ Use parameter symbol to display name<br/>
 ○ Use parameter future to distinguish between spot and futures<br/>
+<br/>
 ● WS path - wss://ws.btse.com/ws/futures<br/>
 ○ Reference https://btsecom.github.io/docs/futures/en/#subscription<br/>
 ○ Send {"op": "subscribe", "args": ["coinIndex"]} after socket connected<br/>
