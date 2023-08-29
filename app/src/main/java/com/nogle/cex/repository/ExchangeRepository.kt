@@ -30,10 +30,10 @@ class ExchangeRepository : IRepository {
     companion object {
         private const val WSS_URL_BTSE_URL = "wss://ws.btse.com/ws/futures"
         private const val WSS_MESSAGE = "{\"op\": \"subscribe\", \"args\": [\"coinIndex\"]}"
-        private const val WSS_KEY_DATA = "data"
-        private const val WSS_KEY_TYPE = "type"
-        private const val WSS_KEY_ID = "id"
-        private const val WSS_KEY_PRICE = "price"
+        const val WSS_KEY_DATA = "data"
+        const val WSS_KEY_TYPE = "type"
+        const val WSS_KEY_ID = "id"
+        const val WSS_KEY_PRICE = "price"
     }
 
     override suspend fun initializeData(scope: CoroutineScope) {
@@ -61,7 +61,7 @@ class ExchangeRepository : IRepository {
     /**
      * get wss data, and mapping symbol to update price
      */
-    private fun priceUpdate(dataObject: JsonObject) {
+    fun priceUpdate(dataObject: JsonObject) {
         dataObject.get(WSS_KEY_DATA)?.let { priceDataObj ->
             val priceObjList: List<JsonObject> = priceDataObj.asJsonObject.entrySet().map { it.value.asJsonObject }
             exchangeItemList.forEach { item ->
