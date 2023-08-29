@@ -1,5 +1,15 @@
 # nogle_exam
 ![exchange_flow_app drawio](https://github.com/ricky7777/nogle_exam/assets/3930480/e1580a6f-4f08-4b91-b80d-7c93234b9c54)
+<h1>Use Skill</h1><br/>
+1.MVVM<br/>
+2.ViewBinding<br/>
+3.DataBinding<br/>
+4.Coroutine<br/>
+5.Livedata<br/>
+6.Roomdatabase<br/>
+7.Repository pattern<br/>
+8.Junit test
+<br/><br/>
 
 Cryptocurrency Exchanges
 Please build up App according to the following description
