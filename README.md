@@ -10,8 +10,7 @@
 7.Junit test
 <br/><br/>
 
-![exchange_flow_app drawio](https://github.com/ricky7777/nogle_exam/assets/3930480/e1580a6f-4f08-4b91-b80d-7c93234b9c54)
-Cryptocurrency Exchanges<br/>
+<h1>Cryptocurrency Exchanges</h1>
 Requirement<br/>
 Please build up App according to the following description<br/>
 ● Android MVVM architecture (ViewModel/Repository)<br/>
@@ -19,11 +18,11 @@ Please build up App according to the following description<br/>
 ● Use Navigation Component to handle page direction<br/>
 ● Use MediatorLiveData to combine multiple data sources<br/>
 ● Use Kotlin language only<br/>
-● Upload source code to Github/GitLab and share signed APK<br/>
+● Upload source code to Github/GitLab and share signed APK<br/><br/><br/>
+
+![unnamed](https://github.com/ricky7777/nogle_exam/assets/3930480/dbedeffb-824d-48d1-b881-2255059077f5)
 
 <br/><br/>
-
-
 
 
 Please design UI according to the following description<br/>
